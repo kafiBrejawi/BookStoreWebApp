@@ -1,0 +1,39 @@
+﻿@model BookWebStore.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Book Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Book Information</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID:</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Id)</dd>
+
+            <dt class="col-sm-3">Title:</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+
+            <dt class="col-sm-3">Short Description:</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ShortDescription)</dd>
+
+            <dt class="col-sm-3">Long Description:</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LongDescription)</dd>
+
+            <dt class="col-sm-3">Image URL:</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ImageUrl)</dd>
+
+            <dt class="col-sm-3">Author:</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Author.FullName)</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
